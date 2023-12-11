@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-for Partie 1</title>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Quelle langage de programation Connaissez-vous ?</p>
+
+        <input type="text" v-model="language" >
+        <button v-on:click="add">Valider</button> 
+      
+        <p>{{ languages }}</p>
+    </div>
+
+    <script type="module">
+
+        app = Vue.createApp(
+            {
+                //model , Ici les données de la page
+                data(){
+                    return{
+                       language: "",
+                       languages: [],
+                    }
+                },
+                methods: {
+                    add(){
+                        this.languages.push(this.language)
+                        this.language = ""
+                    }
+                }
+            }
+        ).mount("#app"); 
+
+    </script>
+</body>
+</html>

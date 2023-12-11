@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Bind</title>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v:bind:scr = :scr -->
+        <img v-bind:src="url" :id="id" :alt="alt" :width="width">
+    </div>
+
+
+    <script type="module">
+
+        app = Vue.createApp(
+            {
+                //model , Ici les données de la page
+                data(){
+                    return{
+                       url: 'https://www.jaitoutcompris.com/img/encyclo/autruche.jpg',
+                       id: "autruche_image",
+                       alt: "Une magnifique beauté naturelle",
+                       width: "100%"
+                    }
+                }
+            }
+        ).mount("#app"); 
+
+    </script>
+</body>
+</html>

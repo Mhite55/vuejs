@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propriétés Calculées</title>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Nous sommes le {{dateFr}}</h1>
+    </div>
+
+
+    <script type="module">
+
+        app = Vue.createApp(
+            {
+                //model , Ici les données de la page
+                data(){
+                    return{
+                       d: new Date()
+                    }
+                },
+                computed: {
+                    dateFr() {
+                        // Convert la date "d"  au format français
+                        return this.d.toLocaleDateString()
+                    }
+                }
+            }
+        ).mount("#app"); 
+
+    </script>
+</body>
+</html>
